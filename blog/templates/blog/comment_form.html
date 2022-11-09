@@ -1,0 +1,11 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<p><span>Post your comment:</span> <a href="{% url 'blog-detail' blog.pk %}">{{blog.title}}</a></p>
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_ul}}
+    <input type="submit" value="Submit" />
+
+</form>
+{% endblock %}

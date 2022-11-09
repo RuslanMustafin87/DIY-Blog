@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+{% block title%}
+    <title>Blogs</title>
+{% endblock %}
+{% block content %}
+    <h1>All blogs</h1>
+    <ul>
+    {%for blog in blog_list %}
+        <li>
+            <a href="{{ blog.get_absolute_url }}">{{ blog }}</a> ({{blog.data_post}}) -- <a href="{% url 'author-detail' blog.author.pk %}">{{blog.author}}</a>
+        </li>
+    {%endfor %}
+    </ul>
+{%endblock %}

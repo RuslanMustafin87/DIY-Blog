@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+    {% block content %}
+        <h1 style="margin-top:0;">{{blog.title}} </h1>
+        <p><strong>Post date:</strong> {{blog.data_post}} </p>
+        <p><strong>Author:</strong> {{blog.author}} </p>
+        <div><strong>Description:</strong>
+            <p>
+                {{blog.post}}
+            </p>
+        </div>
+        <div class="comments">
+            <h2>Comments</h2>
+            <hr>
+            <ul style='list-style: none; padding: 0'>
+                {% for comment in blog.comment_set.all%}
+                    <li><span>{{comment.user}} ({{comment.data_post}}) - {{comment.text}}</span></li>
+                    <hr>
+                {% endfor %}
+            </ul>
+            {% if user.is_authenticated %}
+            <p>
+                <a href="{% url 'comment-create' blog.pk %}">Add new create</a>
+            </p>
+            {% endif %}
+        </div>
+    {% endblock %}

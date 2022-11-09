@@ -1,0 +1,43 @@
+*{
+    font-family: Arial;
+    box-sizing: border-box;
+}
+
+ul, p{
+    margin: 0;
+}
+
+p{
+    padding: 0;
+}
+html, body{
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.sidebar{
+    float: left;
+    width: 15%;
+    height: 100vh;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.content{
+    float: left;
+    padding: 20px;
+    height: 100vh;
+    width: 85%;
+    border-left: 2px solid black ;
+}
+
+.clearfix::after{
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.comments{
+    padding-left: 40px;
+}
