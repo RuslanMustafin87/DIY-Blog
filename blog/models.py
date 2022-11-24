@@ -43,3 +43,4 @@ class Comment(models.Model):
 
     class Meta:
         ordering = ['-data_post']
+
